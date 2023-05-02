@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Conozca su indice de masa corporal (IMC)</title>
+</head>
+<body>
+	<h1>Conozca su indice de masa corporal (IMC)</h1>
+	<script>
+		// Función para imprimir texto en pantalla
+	    function print(string) {            
+	        document.write(string + "<br><br>");
+	    }
+
+	    // Función para calcular el IMC
+	    function calculateimc(weight, height) {
+	        var imc = (weight / (height ** 2)).toFixed(2);
+	        return parseFloat(imc);
+	    }
+
+	    // Pedir información al usuario
+	    var name = prompt("¿Cuál es tu nombre?");
+	    var pesoingresado = prompt(name + " ¿Cuál es tu peso en kg?");
+	    var alturaingresada = prompt(name + " ¿Cuál es tu estatura en m (Utiliza . como separador)?");
+
+	    // Convertir los valores ingresados por el usuario en números decimales
+	    var weight = parseFloat(pesoingresado);
+	    var height = parseFloat(alturaingresada);
+
+	    // Calcular el IMC y mostrar resultado
+	    var imc = calculateimc(weight, height);
+	    print(name + " tu IMC es " + imc);
+
+	    // Evaluar el IMC y mostrar resultado
+	    if (imc >= 40) {
+	        print(name + " tu IMC se encuentra dentro del rango de obesidad clase III.");
+	    } else if (imc >= 34.9 && imc < 39.9) {
+	        print(name + " tu IMC, se encuentra dentro del rango de obesidad clase II.");
+	    } else if (imc >= 30 && imc < 34.9) {
+	        print(name + " tu IMC se encuentra dentro del rango de obesidad Clase I.");
+	    } else if (imc >= 25 && imc < 29.9) {
+	        print(name + " tu IMC se encuentra dentro del rango de sobrepeso.");
+	    } else if (imc >= 18.5 && imc < 24.9) {
+	        print(name + " tu IMC se encuentra dentro del rango de peso normal o saludable.");
+	    } else if (imc < 18.5) {
+	        print(name + " tu IMC se encuentra dentro del rango de peso insuficiente.");
+	    }
+	</script>
+</body>
+</html>
