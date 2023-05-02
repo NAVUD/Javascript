@@ -2,48 +2,48 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Conozca su indice de masa corporal (IMC)</title>
+	<title>Know your body mass index (BMI).)</title>
 </head>
 <body>
-	<h1>Conozca su indice de masa corporal (IMC)</h1>
+	<h1>Know your body mass index (BMI).)</h1>
 	<script>
-		// Función para imprimir texto en pantalla
+		// Function for printing text on the screen
 	    function print(string) {            
 	        document.write(string + "<br><br>");
 	    }
 
-	    // Función para calcular el IMC
+	    // Function to calculate BMI
 	    function calculateimc(weight, height) {
 	        var imc = (weight / (height ** 2)).toFixed(2);
 	        return parseFloat(imc);
 	    }
 
-	    // Pedir información al usuario
-	    var name = prompt("¿Cuál es tu nombre?");
-	    var pesoingresado = prompt(name + " ¿Cuál es tu peso en kg?");
-	    var alturaingresada = prompt(name + " ¿Cuál es tu estatura en m (Utiliza . como separador)?");
+	    // Requesting information from the user
+	    var name = prompt("What is your name?");
+	    var pesoingresado = prompt(name + " What is your weight in kg?");
+	    var alturaingresada = prompt(name + " What is your height in m (Use . as separator)?");
 
-	    // Convertir los valores ingresados por el usuario en números decimales
+	    // Convert user-entered values to decimal numbers
 	    var weight = parseFloat(pesoingresado);
 	    var height = parseFloat(alturaingresada);
 
-	    // Calcular el IMC y mostrar resultado
+	    // Calculate BMI and display result
 	    var imc = calculateimc(weight, height);
-	    print(name + " tu IMC es " + imc);
+	    print(name + " your BMI is " + imc);
 
-	    // Evaluar el IMC y mostrar resultado
+	    // Evaluate BMI and display result
 	    if (imc >= 40) {
-	        print(name + " tu IMC se encuentra dentro del rango de obesidad clase III.");
+	        print(name + " your BMI is within the class III obesity range.");
 	    } else if (imc >= 34.9 && imc < 39.9) {
-	        print(name + " tu IMC, se encuentra dentro del rango de obesidad clase II.");
+	        print(name + " your BMI is within the class II obesity range.");
 	    } else if (imc >= 30 && imc < 34.9) {
-	        print(name + " tu IMC se encuentra dentro del rango de obesidad Clase I.");
+	        print(name + " your BMI is within the Class I obesity range.");
 	    } else if (imc >= 25 && imc < 29.9) {
-	        print(name + " tu IMC se encuentra dentro del rango de sobrepeso.");
+	        print(name + " your BMI is in the overweight range.");
 	    } else if (imc >= 18.5 && imc < 24.9) {
-	        print(name + " tu IMC se encuentra dentro del rango de peso normal o saludable.");
+	        print(name + " your BMI is within the normal or healthy weight range.");
 	    } else if (imc < 18.5) {
-	        print(name + " tu IMC se encuentra dentro del rango de peso insuficiente.");
+	        print(name + " your BMI is within the underweight range.");
 	    }
 	</script>
 </body>
